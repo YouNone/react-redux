@@ -1,12 +1,17 @@
 import Counter from "./components/Counter";
 import Header from "./components/Header";
 import Auth from "./components/Auth";
+import UserProfile from "./components/UserProfile";
+import { useSelector } from "react-redux";
+
 
 function App() {
+  const isUserLoggedIn = useSelector((state) => state.login.isUserLoggedIn);
   return (
     <div>
       <Header/>
-      <Auth/>
+     {!isUserLoggedIn && <Auth/>}
+      { isUserLoggedIn && <UserProfile/>}
       <Counter />
     </div>
   );
