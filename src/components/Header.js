@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import classes from "./Header.module.css";
-import { loginActions } from "../store/index";
+import { loginActions } from "../store/loginSlice";
 
 const Header = () => {
   const isUserLoggedIn = useSelector((state) => state.login.isUserLoggedIn);
